@@ -5,7 +5,7 @@
 from marionette_driver import By
 
 from firefox_puppeteer.ui_base_lib import UIBaseLib
-from firefox_puppeteer.ui.panels import BasePanel as Panel
+from firefox_puppeteer.ui.deck import BasePanel as Panel
 
 
 class Deck(UIBaseLib):
