@@ -4,11 +4,31 @@
 
 from marionette_driver import By
 
-from firefox_puppeteer.ui.deck import Deck
+from firefox_puppeteer.ui_base_lib import UIBaseLib
 from firefox_puppeteer.ui.deck import Panel
 
 
-class AboutWindowDeck(Deck):
+class Deck(UIBaseLib):
+
+    def _create_panel_for_id(self, panel_id):
+        """Creates an instance of :class:`Panel` for the specified panel id.
+
+        :param panel_id: The ID of the panel to create an instance of.
+
+        :returns: :class:`Panel` instance
+        """
+        mapping = {'apply': ApplyPanel,
+                   'applyBillboard': ApplyBillboardPanel,
+                   'checkForUpdates': CheckForUpdatesPanel,
+                   'checkingForUpdates': CheckingForUpdatesPanel,
+                   'downloadAndInstall': DownloadAndInstallPanel,
+                   'downloadFailed': DownloadFailedPanel,
+                   'downloading': DownloadingPanel,
+                   'noUpdatesFound': NoUpdatesFoundPanel,
+                   }
+
+        panel = self.element.find_element(By.ID, panel_id)
+        return mapping.get(panel_id, Panel)(lambda: self.marionette, self.window, panel)
 
     # Properties for visual elements of the deck #
 

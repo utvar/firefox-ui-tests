@@ -4,7 +4,7 @@
 
 from marionette_driver import By
 
-from firefox_puppeteer.ui.deck import Deck
+from firefox_puppeteer.ui.pageinfo.deck import Deck
 from firefox_puppeteer.ui.windows import BaseWindow, Windows
 
 
