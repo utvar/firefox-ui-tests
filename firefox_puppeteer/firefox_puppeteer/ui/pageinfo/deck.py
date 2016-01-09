@@ -4,11 +4,11 @@
 
 from marionette_driver import By, Wait
 
-from firefox_puppeteer.ui.deck import BaseDeck
-from firefox_puppeteer.ui.deck import BasePanel
+from firefox_puppeteer.ui.deck import Deck
+from firefox_puppeteer.ui.deck import Panel
 
 
-class Deck(BaseDeck):
+class PageInfoDeck(Deck):
 
     # Properties for visual elements of the deck #
 
@@ -106,7 +106,7 @@ class Deck(BaseDeck):
         return panel
 
 
-class Panel(BasePanel):
+class PageInfoPanel(Panel):
 
     @property
     def tab(self):

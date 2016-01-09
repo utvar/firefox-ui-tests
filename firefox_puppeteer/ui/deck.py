@@ -7,7 +7,7 @@ from marionette_driver import By
 from firefox_puppeteer.ui_base_lib import UIBaseLib
 
 
-class BaseDeck(UIBaseLib):
+class Deck(UIBaseLib):
 
     def _create_panel_for_id(self, panel_id):
         """Creates an instance of :class:`Panel` for the specified panel id.
@@ -32,10 +32,10 @@ class BaseDeck(UIBaseLib):
                    }
 
         panel = self.element.find_element(By.ID, panel_id)
-        return mapping.get(panel_id, BasePanel)(lambda: self.marionette, self.window, panel)
+        return mapping.get(panel_id, Panel)(lambda: self.marionette, self.window, panel)
 
 
-class BasePanel(UIBaseLib):
+class Panel(UIBaseLib):
 
     def __eq__(self, other):
         return self.element.get_attribute('id') == other.element.get_attribute('id')

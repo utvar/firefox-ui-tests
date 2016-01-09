@@ -4,11 +4,11 @@
 
 from marionette_driver import By
 
-from firefox_puppeteer.ui.deck import BaseDeck
-from firefox_puppeteer.ui.deck import BasePanel as Panel
+from firefox_puppeteer.ui.deck import Deck
+from firefox_puppeteer.ui.deck import Panel
 
 
-class Deck(BaseDeck):
+class AboutWindowDeck(Deck):
 
     # Properties for visual elements of the deck #
 
