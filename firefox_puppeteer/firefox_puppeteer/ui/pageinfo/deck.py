@@ -135,23 +135,23 @@ class PageInfoPanel(Panel):
         return self.window.window_element.find_element(By.ID, name + 'Tab')
 
 
-class FeedPanel(Panel):
+class FeedPanel(PageInfoPanel):
     pass
 
 
-class GeneralPanel(Panel):
+class GeneralPanel(PageInfoPanel):
     pass
 
 
-class MediaPanel(Panel):
+class MediaPanel(PageInfoPanel):
     pass
 
 
-class PermissionsPanel(Panel):
+class PermissionsPanel(PageInfoPanel):
     pass
 
 
-class SecurityPanel(Panel):
+class SecurityPanel(PageInfoPanel):
 
     @property
     def domain(self):
